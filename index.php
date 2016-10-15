@@ -1,5 +1,33 @@
+<?php
+include 'config.php';
+
+// establishing the MySQLi connection
+if (mysqli_connect_errno()){
+    echo "MySQLi Connection was not established: " . mysqli_connect_error();
+}
+// checking the user
+if(isset($_POST['sub_login'])){
+    $email = $_POST['mail_id'];
+    $pass = $_POST['pwd'];
+    $MD5pass=  md5($pass);
+    $sel_user = "select * from `user` where `email_id`='$email' AND `password`='$MD5pass'";
+    $run_user = mysqli_query($conn, $sel_user);
+    $check_user = mysqli_num_rows($run_user);
+    if($check_user>0){
+        setcookie("loggedin", 1, time()+3600);  /* expire in 1 hour */
+        setcookie("username", $email, time()+3600);  /* expire in 1 hour */
+        echo "<script>window.open('lostORfound.php','_self')</script>";
+    }
+    else {
+        echo "<script>alert('Email or password is not correct, try again!')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
+    }
+}
+?>
+
 <html>
     <head>
+
         <title>Lost & Found</title>
 
         <!-- Latest compiled and minified CSS -->
@@ -51,7 +79,7 @@
                 <div class="col-md-4"></div>
                 <div class="panel panel-trans col-md-4">
                     <div class="panel-body">
-                        <form method="post">
+                        <form method="post" action="">
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="mail_id">Email ID</label>

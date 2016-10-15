@@ -1,3 +1,40 @@
+<?php
+include 'config.php';
+
+    if(isset($_COOKIE['loggedin']) && $_COOKIE['loggedin']== true)
+    {
+        echo "<script>window.open('lostORfound.php','_self')</script>";
+    }
+
+    if (isSet($_POST['signup_sub']) && isSet($_POST['u_email']) && isSet($_POST['u_pwd']) && $_POST['u_email'] != '' && $_POST['u_pwd'] != '')
+    {
+        $name=$_POST['u_name'];
+        $mob=$_POST['u_mobile'];
+        $pass = $_POST['u_pwd'];
+        $passMD5 = md5($pass);
+        $user = $_POST['u_email'];
+        $q = mysqli_query($conn, "SELECT * FROM `user` WHERE `email_id`='$user'") ;
+        if (mysqli_num_rows($q) ){
+            echo '<script language="javascript">';
+            echo 'alert("User Id Already Taken!")';
+            echo '</script>';
+
+        }else{
+            $qq = mysqli_query($conn, "INSERT INTO `user` VALUES ('','$user','$name','$passMD5','$mob')");
+            if ($qq) {
+                echo '<script language="javascript">';
+                echo 'alert("Successfully Registered! now login using id and password");';
+                echo "window.open('index.php','_self');";
+                echo '</script>';
+            }else{
+                echo '<script language="javascript">';
+                echo 'alert("Something Went Wrong!")';
+                echo '</script>';
+            }
+        }
+    }
+?>
+
 <html>
     <head>
         <title>Lost & Found</title>

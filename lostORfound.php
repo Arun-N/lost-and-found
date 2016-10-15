@@ -1,3 +1,13 @@
+<?php
+include 'config.php';
+    if (!isset($_COOKIE["loggedin"]) && $_COOKIE["loggedin"] == false) {
+        echo "<script>window.open('index.php','_self')</script>";
+        exit;
+}
+
+?>
+
+
 <html>
     <head>
         <title>Lost & Found</title>
@@ -28,6 +38,9 @@
     </head>
     <body>
         <div class="container">
+                <a  class="btn btn-primary" style="width: 80px;float: right;margin-right:10px;" id="logout" name="logout" href="logout.php">LOG OUT</a>
+
+
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">DID YOU...</h1>
             </div>
