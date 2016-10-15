@@ -11,9 +11,6 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="js/bootstrap.min.js"></script>
         <style>
-            .well{
-                margin-top: 100px;
-            }
 
             .jumbo-trans{
                 background: transparent;
@@ -35,6 +32,7 @@
             .panel-trans .panel-heading{
                 background: rgba(122, 130, 136, 0.4)!important;
             }
+
             .panel-trans .panel-body{
                 background: rgba(46, 51, 56, 0.4)!important;
             }
@@ -49,21 +47,26 @@
             <div class="jumbotron jumbo-trans text-center">
                 <h1 style="color: dodgerblue">Some Fancy Title And Logo</h1>
             </div>
-            <div class="panel panel-trans">
-                <div class="panel-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <label for="mail_id">Email ID</label>
-                            <input type="email" id="mail_id" name="mail_id" class="form-control" required>
-                            <br><br>
-                            <label for="pwd">Password</label>
-                            <input type="password" id="pwd" name="pwd" class="form-control" required>
-                            <br>
-                            <button type="submit" class="btn btn-success" id="sub_login" name="sub_login">Login</button>
-                        </div>
-                    </form>
-                    <hr>
-                    <p>New User? Sign up over <a href="signup.php">here</a></p>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="panel panel-trans col-md-4">
+                    <div class="panel-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="mail_id">Email ID</label>
+                                    <input type="email" id="mail_id" name="mail_id" class="form-control" required>
+                                    <br><br>
+                                    <label for="pwd">Password</label>
+                                    <input type="password" id="pwd" name="pwd" class="form-control" required>
+                                    <br>
+                                    <center><button type="submit" class="btn btn-success" id="sub_login" name="sub_login">Login</button></center>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <p>New User? Sign up over <a href="signup.php">here</a></p>
+                    </div>
                 </div>
             </div>
         </div>
