@@ -1,3 +1,14 @@
+<?php
+session_start();
+if($_SESSION['uid']== 4)
+{
+    echo '<script language="javascript">';
+    echo 'alert("you are sonu");';
+    echo '</script>';
+}
+
+?>
+
 <html>
     <head>
         <title>Lost & Found</title>
@@ -59,20 +70,27 @@
     </head>
     <body>
         <div class="container-fluid">
-                <button type="button" class="btn btn-primary" id="logout" name="logout" style="margin-top: 15px; margin-left: 90%" onclick="">Logout</button>
+                <a  class="btn btn-primary" id="logout" name="logout" style="margin-top: 15px; margin-left: 90%" href="logout.php">Logout</a>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center text-capitalize">Describe the object found</h1>
             </div>
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" action="uploadimg.php" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">
                     </div>
                     <div class="col-md-4">
-                        <center><img src="images/upload_img_placeholder.png" height="150px" width="200px" id="object_img" name="obj_img"></center>
+                        <?php if(isset($_SESSION['nname']) && $_SESSION['nname']==true): ?>
+                        <center><img src="objimg/<?php echo $_SESSION['nname']; ?>" height="150px" width="200px" id="object_img" name="obj_img"></center>
                         <br>
+                        <center><?php echo $_SESSION['oname']." "; ?>is selected</center>
+                        <?php else: ?>
+                        <center><img src="images/upload_img_placeholder.png" height="150px" width="200px" id="object_img" name="obj_img"></center>
+                        <?php endif;?>
+                        <br>
+
                         <center>
                             <label class="btn btn-success btn-file">
-                                Browse<input type="file" style="display: none" id="img_upload_btn">
+                                Upload IMG<input type="file" onchange="this.form.submit()" style="display: none" name="file" id="img_upload_btn">
                             </label>
                             <!--<input type="file" class="btn" id="img_upload_btn" name="img_upload_btn" required>-->
                         </center>
@@ -80,8 +98,9 @@
                     <div class="col-md-4">
                     </div>
                 </div>
+            </form>
 
-
+            <form method="post" action="entry.php" >
                 <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
 
 

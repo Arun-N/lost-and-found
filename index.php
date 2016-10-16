@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+session_start();
 
 // establishing the MySQLi connection
 if (mysqli_connect_errno()){
@@ -12,10 +13,14 @@ if(isset($_POST['sub_login'])){
     $MD5pass=  md5($pass);
     $sel_user = "select * from `user` where `email_id`='$email' AND `password`='$MD5pass'";
     $run_user = mysqli_query($conn, $sel_user);
+
+
     $check_user = mysqli_num_rows($run_user);
     if($check_user>0){
-        setcookie("loggedin", 1, time()+3600);  /* expire in 1 hour */
-        setcookie("username", $email, time()+3600);  /* expire in 1 hour */
+        $row = mysqli_fetch_assoc($run_user);
+        $_SESSION['uid']=$row['uid'];
+        $_SESSION["loggedin"]=1;
+        $_SESSION["eid"]= $email;
         echo "<script>window.open('lostORfound.php','_self')</script>";
     }
     else {

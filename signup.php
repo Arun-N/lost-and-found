@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
-
-    if(isset($_COOKIE['loggedin']) && $_COOKIE['loggedin']== true)
+session_start();
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']== true)
     {
         echo "<script>window.open('lostORfound.php','_self')</script>";
     }
