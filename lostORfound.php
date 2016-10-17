@@ -64,7 +64,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <center><button type="button" class="btn btn-primary" style="width: 80px" id="search" name="search" onclick="">SEARCH</button></center>
+                    <center><a class="btn btn-primary" style="width: 80px" id="search" name="search" href="search.php">SEARCH</a></center>
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">

@@ -1,11 +1,6 @@
 <?php
 session_start();
-if($_SESSION['uid']== 4)
-{
-    echo '<script language="javascript">';
-    echo 'alert("you are sonu");';
-    echo '</script>';
-}
+
 
 ?>
 
