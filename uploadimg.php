@@ -12,7 +12,7 @@ $allow= array("jpg","jpeg","gif","png");//allowing specific file
 $name=$_FILES['file']['name'];
 $_SESSION['oname']=$name;
 
-$seperate=explode(".",$_FILES['file']['name']); //separating base name and extention of file in an array
+$seperate=explode(".",$_FILES['file']['name']);
 
 $extention=strtolower($seperate[1]);
 

@@ -19,6 +19,7 @@ if(isset($_POST['sub_login'])){
     if($check_user>0){
         $row = mysqli_fetch_assoc($run_user);
         $_SESSION['uid']=$row['uid'];
+        $_SESSION['user']=$row['u_name'];
         $_SESSION["loggedin"]=1;
         $_SESSION["eid"]= $email;
         echo "<script>window.open('lostORfound.php','_self')</script>";
@@ -51,7 +52,7 @@ if(isset($_POST['sub_login'])){
             }
 
             body{
-                background-image: url("images/login_background.jpg");
+                background-image: url("images/alternative_bg_img.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }

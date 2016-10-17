@@ -65,7 +65,10 @@ session_start();
     </head>
     <body>
         <div class="container-fluid">
-                <a  class="btn btn-primary" id="logout" name="logout" style="margin-top: 15px; margin-left: 90%" href="logout.php">Logout</a>
+            <nobr>
+                <a class="btn btn-primary" id="profile" name="profile" style="width: 90px;float: right;margin-right:50px; margin-top: 10px" href="profile.php">Profile</a>
+                <a class="btn btn-primary" style="width: 90px;float: right;margin-right:10px; margin-top: 10px" id="logout" name="logout" href="logout.php">Log out</a>
+            </nobr>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center text-capitalize">Describe the object found</h1>
             </div>

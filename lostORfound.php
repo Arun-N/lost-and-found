@@ -31,7 +31,7 @@ session_start();
             }
             
             body{
-                background-image: url("images/lostORfound_back.png");
+                background-image: url("images/alternative_bg_img.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -41,8 +41,10 @@ session_start();
     </head>
     <body>
         <div class="container">
-                <a  class="btn btn-primary" style="width: 80px;float: right;margin-right:10px;" id="logout" name="logout" href="logout.php">LOG OUT</a>
-
+                <nobr>
+                    <a class="btn btn-primary" id="profile" name="profile" style="width: 90px;float: right;margin-right:50px; margin-top: 10px" href="profile.php">Profile</a>
+                    <a class="btn btn-primary" style="width: 90px;float: right;margin-right:10px; margin-top: 10px" id="logout" name="logout" href="logout.php">Log out</a>
+                </nobr>
 
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">DID YOU...</h1>

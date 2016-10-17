@@ -55,7 +55,7 @@ session_start();
             }
 
             body{
-                background-image: url("images/login_background.jpg");
+                background-image: url("images/alternative_bg_img.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -87,7 +87,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            <form method="post">
+            <form method="post" action="">
                 <div class="panel panel-trans col-md-4">
                     <div class="panel-body">
                         <div>

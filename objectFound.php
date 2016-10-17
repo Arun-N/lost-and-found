@@ -30,7 +30,10 @@
     </head>
     <body>
         <div class="container">
-            <a class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;" href="logout.php">Logout</a>
+            <nobr>
+                <a class="btn btn-primary" id="profile" name="profile" style="width: 90px;float: right;margin-right:50px; margin-top: 10px" href="profile.php">Profile</a>
+                <a class="btn btn-primary" style="width: 90px;float: right;margin-right:10px; margin-top: 10px" id="logout" name="logout" href="logout.php">Log out</a>
+            </nobr>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">YOUR LOST ITEM HAS BEEN FOUND!</h1>
                 <h1 class="text-center">BY</h1>
