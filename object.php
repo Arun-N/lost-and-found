@@ -1,5 +1,5 @@
 <?php
-    require_once 'singleobj.php';
+    require_once ('singleobj.php');
     session_start();
     $s=new single();
 
@@ -58,34 +58,30 @@
     </head>
     <body>
         <div class="container">
-            <?php
-            $s=new single();
-            ?>
+
             <a class="btn btn-primary" href="logout.php" id="logout" style="margin-left: 90%; margin-top:15px;" href="logout.php">Logout</a>
-            <div class="jumbotron jumbo-trans"><h1 class="text-center"><?php $s->getObjName();?></h1></div>
+            <div class="jumbotron jumbo-trans"><h1 class="text-center"><?php echo $s->getObjName();?></h1></div>
 
 
             <div class="row">
                 <div class="col-md-3">
-                    <img src="objimg/<?php $s->getImgUrl();?>" height="200px" width="250px" id="obj_img" name="obj_img">
+                    <img src="objimg/<?php echo $s->getImgUrl();?>" height="200px" width="250px" id="obj_img" name="obj_img">
                 </div>
-                <div class="col-md-3">
-                    <button type="submit" class="btn btn-success btn-center" id="submit_ans" name="submit_ans">Submit</button>
-                </div>
+
             </div>
             <div class="row"><br><br></div>
             <form method="post" action="verify.php">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="answer1" id="question1"><?php $s->getQ1();?></label>
+                            <label for="answer1" id="question1"><?php echo $s->getQ1();?></label>
                             <input type="text" class="form-control" id="answer1" name="answer1" placeholder="answer" required>
                         </div>
                     </div>
                     <div class="row"><br><br></div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="answer2" id="question2"><?php $s->getQ2();?></label>
+                            <label for="answer2" id="question2"><?php echo $s->getQ2();?></label>
                             <input type="text" class="form-control" id="answer2" name="answer2" placeholder="answer" required>
                             <div class="col-md-3">
                                 <button type="submit" class="btn btn-success btn-center" id="submit_ans" name="submit_ans">Submit</button>

@@ -10,8 +10,9 @@ session_start();
 
 $uid=$_SESSION['uid'];
 $obj_name=$_POST['obj_name'];
-$strtags=$_POST['tags'];
+$strtags=strtolower($_POST['tags']);
 $tag=explode(',',$strtags);//converting string to array
+$tag[]=strtolower($obj_name);
 $tags=serialize($tag);
 
 $img_url=$_SESSION['nname'];

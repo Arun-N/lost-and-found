@@ -10,22 +10,25 @@
 class single
 {
 
-    public $obj_name=null;
-    public $img_url=null;
-    public $id=null;
-    public $q1=null;
-    public $q2=null;
-    public $a1=null;
-    public $a2=null;
+    public $obj_name='';
+    public $img_url='';
+    public $id='';
+    public $q1='';
+    public $q2='';
+    public $a1='';
+    public $a2='';
 
     function __construct()
     {
-       $this->id=2007;
+       $this->id=$_GET['id'];
         $this->retrieve();
 
 
     }
 
+    /**
+     *
+     */
     public function retrieve()
     {
 
@@ -36,7 +39,7 @@ class single
             $this->img_url = $row['img_url'];
 
             $this->obj_name = $row['obj_name'];
-            echo $this->obj_name;
+            $_SESSION['oid']=$row['uid'];
         }
         $qA=array();
         $qS=array();
