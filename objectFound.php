@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html>
     <head>
         <title>Lost & Found</title>
@@ -26,13 +30,13 @@
     </head>
     <body>
         <div class="container">
-            <button type="button" class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;">Logout</button>
+            <a class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;" href="logout.php">Logout</a>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">YOUR LOST ITEM HAS BEEN FOUND!</h1>
                 <h1 class="text-center">BY</h1>
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Person's username<br><br>Person's Mobile No.<br><br>Person's Email ID</h2>
+                        <h2>NAME:<?php echo $_SESSION['name'];?><br><br>MOBILE:<?php echo $_SESSION['mob'];?><br><br>EMAIL ID:<?php echo $_SESSION['emid'];?></h2>
                     </div>
                     <div class="col-md-6">
                         <center><img src="images/vault_boy_thubs_up.png" width="200px" height="200px" style="background-size: cover"></center>

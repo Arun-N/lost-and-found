@@ -32,7 +32,6 @@ if($A1==$a1)
     else
     {
         echo "<script>alert('SORRY! this is not your thing')</script>";
-        echo "<script>window.open('search.php','_self')</script>";
     }
 
 }
