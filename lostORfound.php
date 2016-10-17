@@ -1,6 +1,9 @@
 <?php
 include 'config.php';
-    if (!isset($_COOKIE["loggedin"]) && $_COOKIE["loggedin"] == false) {
+session_start();
+
+
+    if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
         echo "<script>window.open('index.php','_self')</script>";
         exit;
 }
@@ -61,11 +64,11 @@ include 'config.php';
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <center><button type="button" class="btn btn-primary" style="width: 80px" id="search" name="search" onclick="">SEARCH</button></center>
+                    <center><a class="btn btn-primary" style="width: 80px" id="search" name="search" href="search.php">SEARCH</a></center>
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <center><button type="button" class="btn btn-primary" style="width: 80px" id="upload" name="upload" onclick="">UPLOAD</button></center>
+                    <center><a  class="btn btn-primary" style="width: 80px" id="upload" name="upload" href="upload.php">UPLOAD</a></center>
                 </div>
             </div>
         </div>

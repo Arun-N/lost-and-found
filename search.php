@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once ('generateobj.php');
+?>
+
 <html>
     <head>
         <title>Lost & Found</title>
@@ -45,12 +50,12 @@
     </head>
     <body>
         <div class="container">
-            <button type="button" class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;">Logout</button>
+            <a class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;" href="logout.php">Logout</a>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">Search For Your Missing Item</h1>
-                <form method="post">
+                <form method="post" action="tag_search.php">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="search_box" name="search_box" placeholder="Search for...">
+                        <input type="text" class="form-control" id="search_box" name="search_box" placeholder="Search for..." value="<?php if(isset($_SESSION['searchB'])){echo $_SESSION['searchB'];}?>">
                         <span class="input-group-btn">
                             <button type="submit" id="search" name="search" class="btn btn-success">Find&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span></button>
                         </span>
@@ -63,43 +68,20 @@
                     <h4>Search Result Example</h4>
                     <!-- RESULT PAGE TEMPLATE STARTS HERE -->
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 1</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 2</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 3</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 4</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 5</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="input-group">
-                                <span class="input-group-addon"><img src="images/lost.jpg" height="150px" width="150px"></span>
-                                <a href="#">&nbsp;&nbsp;Content 6</a>
-                            </div>
-                        </div>
+                    <?php
+
+                        if(isset($_SESSION['result']))
+                        {
+                            $o=new obj();
+                            $o->generate($_SESSION['result']);
+
+                        }
+
+
+
+                    ?>
                     </div>
+
                     <!-- RESULT PAGE TEMPLATE ENDS HERE -->
                 </div>
             </div>
