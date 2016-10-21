@@ -51,9 +51,8 @@ if(isset($_POST['sub_login'])){
                 margin: auto;
             }
 
-            body{
-                background-image: url("images/alternative_bg_img.jpg");
-                background-repeat: no-repeat;
+            body {
+                background: url(images/alternative_bg_img.jpg) no-repeat fixed;
                 background-size: cover;
             }
 

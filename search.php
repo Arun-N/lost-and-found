@@ -22,9 +22,8 @@ require_once ('generateobj.php');
                 margin: auto;
             }
 
-            body{
-                background-image: url("images/alternative_bg_img.jpg");
-                background-repeat: no-repeat;
+            body {
+                background: url(images/alternative_bg_img.jpg) no-repeat fixed;
                 background-size: cover;
             }
 
@@ -32,10 +31,6 @@ require_once ('generateobj.php');
                 background: none;
                 color: #0f0f0f;
                 font-size: 20px;
-            }
-
-            .panel-trans .panel-heading {
-                background: rgba(122, 130, 136, 0.4)!important;
             }
 
             .panel-trans .panel-body {

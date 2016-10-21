@@ -45,9 +45,22 @@ session_start();
             }
             
             body {
-                background-image: url("images/lostORfound_back.png");
-                background-repeat: no-repeat;
+                background: url(images/alternative_bg_img.jpg) no-repeat fixed;
                 background-size: cover;
+            }
+
+            .panel-trans {
+                background: none;
+                color: #0f0f0f;
+                font-size: 20px;
+            }
+
+            .panel-trans .panel-heading{
+                background: rgba(122, 130, 136, 0.8)!important;
+            }
+
+            .panel-trans .panel-body{
+                background: rgba(46, 51, 56, 0.2)!important;
             }
 
         </style>
@@ -71,6 +84,24 @@ session_start();
             </nobr>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center text-capitalize">Describe the object found</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-trans">
+                        <div class="panel-heading">
+                            <h3 class="text-center" style="color: red">****** IMPORTANT INSTRUCTIONS! READ BEFORE FILLING OUT! ******</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>Instruction 1</li>
+                                <li>Instruction 2</li>
+                                <li>Instruction 3</li>
+                                <li>Instruction 4</li>
+                                <li>Instruction 5</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <form method="post" action="uploadimg.php" enctype="multipart/form-data">
                 <div class="row">
@@ -99,7 +130,7 @@ session_start();
             </form>
 
             <form method="post" action="entry.php" >
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
+                <div class="row"><div class="col-md-12"><br><br></div></div>
 
 
                 <div class="row">
@@ -112,7 +143,7 @@ session_start();
                 </div>
 
 
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
+                <div class="row"><div class="col-md-12"><br><br></div></div>
 
 
                 <div class="row">
@@ -125,57 +156,72 @@ session_start();
                 </div>
 
 
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
-
+                <div class="row"><div class="col-md-12"><br><br></div></div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="text-center text-capitalize">Question 1</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="q1" name="q1" required>
+                    <!--<div class="col-md-4">
+                    </div>-->
+                    <div class="col-md-12">
+                        <div class="panel panel-trans">
+                            <div class="panel-heading">
+                                QUESTION 1
+                            </div>
+                            <div class="panel-body">
+                                <label for="ques_1">Question</label>
+                                <input type="text" class="form-control" id="ques_1" name="ques_1" placeholder="Enter the first question...">
+                                <div class="row"><div class="col-md-12"><br></div></div>
+
+                                <!-- Question panel START -->
+
+                                <label for="answer_block_1">Answers</label>
+                                <div id="answer_block_1">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="ans1" name="ans1" placeholder="Answer 1" required>
+                                                <span class="input-group-addon">
+                                                    <input type="radio" id="radio_ans1" name="correct_ans_q1" checked>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="ans2" name="ans2" placeholder="Answer 2" required>
+                                                <span class="input-group-addon">
+                                                    <input type="radio" id="radio_ans2" name="correct_ans_q1" >
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row"><div class="col-md-12"><br></div></div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="ans3" name="ans3" placeholder="Answer 3" required>
+                                                <span class="input-group-addon">
+                                                    <input type="radio" id="radio_ans3" name="correct_ans_q1" >
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="ans4" name="ans4" placeholder="Answer 4" required>
+                                                <span class="input-group-addon">
+                                                    <input type="radio" id="radio_ans2" name="correct_ans_q1" >
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question panel END -->
+
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="text-center text-capitalize">Answer 1</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="a1" name="a1" placeholder="check spelling" required>
-                    </div>
-                </div>
-
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="text-center text-capitalize">Question 2</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="q2" name="q2" required>
-                    </div>
-                </div>
-
-
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
-
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3 class="text-center text-capitalize">Answer 2</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="a2" name="a2" placeholder="check spelling" required>
-                    </div>
-                </div>
-
-                <div class="row"><div class="col-md-12"><br><br><br><br></div></div>
+                <div class="row"><div class="col-md-12"><br><br></div></div>
 
                 <center><button type="submit" class="btn btn-success" id="submit_obj_details" name="submit_obj_details">Submit</button></center>
             </form>
