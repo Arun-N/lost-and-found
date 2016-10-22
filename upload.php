@@ -74,6 +74,14 @@ session_start();
                     document.getElementById("tags").focus();
                 }
             }
+
+            function check_number() {
+                var number = document.getElementById("no_of_questions").value;
+                if(number < 2 || number > 10){
+                    alert("Number of questions should be between 2 and 10");
+                    document.getElementById("no_of_questions").focus();
+                }
+            }
         </script>
     </head>
     <body>
@@ -155,6 +163,17 @@ session_start();
                     </div>
                 </div>
 
+
+                <div class="row"><div class="col-md-12"><br><br></div></div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="text-center">Number of questions</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" class="form-control" id="no_of_questions" name="no_of_questions" min="2" max="10" value="2" placeholder="Min 2 and Max 10" onblur="check_number()" required>
+                    </div>
+                </div>
 
                 <div class="row"><div class="col-md-12"><br><br></div></div>
 
