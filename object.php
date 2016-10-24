@@ -71,10 +71,50 @@
                 </div>
 
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <center><h3><?php
+                            if($_SESSION['ostatus']=="false")
+                            {
+                                echo "AVAILABLE";
+                            }
+                            else
+                            {
+                                echo "Already claimed";
+                            }
+
+                            ?></h3></center>
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <center><h3>uploaded
+                        <?php
+                        if($_SESSION['dif']=="0")
+                        {
+                            echo "Today";
+                        }
+                        elseif($_SESSION['dif']=="1")
+                        {
+                            echo "a day ago";
+                        }
+                        else{
+                            echo $_SESSION['dif'].' days ago';
+                        }
+
+                        ?></h3></center>
+                </div>
+
+            </div>
 
             <div class="row"><br><br></div>
 
-            <form method="post" action="test.php">
+<?php if($_SESSION['ostatus']=="false") :?>
+            <form method="post" action="verify.php">
                 <div class="form-group">
 
                     <!-- Question 1 START -->
@@ -91,6 +131,7 @@
                     </div>
                 </div>
             </form>
+            <?php endif;?>
 
         </div>
     </body>

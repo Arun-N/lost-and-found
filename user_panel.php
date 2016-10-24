@@ -1,3 +1,9 @@
+<?php
+include ('config.php');
+
+?>
+
+
 <html>
     <head>
         <title>Admin Page</title>
@@ -54,7 +60,7 @@
                             <li><a href="object_panel.php">Lost Objects</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
+                            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -71,11 +77,15 @@
                 <div class="panel panel-trans">
                     <div class="panel-body">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="#">User 1</a></li>
-                            <li class="list-group-item"><a href="#">User 2</a></li>
-                            <li class="list-group-item"><a href="#">User 3</a></li>
-                            <li class="list-group-item"><a href="#">User 4</a></li>
-                            <li class="list-group-item"><a href="#">User 5</a></li>
+                        <?php
+                        $q=mysqli_query($conn,"SELECT * FROM `user` WHERE `role`='normal'");
+                        while ($row=mysqli_fetch_array($q))
+                        {
+                            echo '<li class="list-group-item"><a href="userinfo.php?id='.$row['uid'].'">'.$row['u_name'].'</a></li>';
+                        }
+
+                        ?>
+
                         </ul>
                     </div>
                 </div>

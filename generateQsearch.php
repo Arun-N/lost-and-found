@@ -38,10 +38,10 @@ class question
 '<div class="row"><div class="col-md-12"><br></div></div>'.
 '<div class="row">'.
     '<div class="col-md-6">'.
-        '<label for="q1_ans1"><input type="radio" name="radio_answer'.$count.'" id="q1_ans1" value='.$opt[0].'  checked>&nbsp;&nbsp;'.$opt[0].'</label>'.
+        '<label for="q1_ans1"><input type="radio" name="radio_answer'.$count.'" id="q1_ans1" value="'.$opt[0].'"  checked>&nbsp;&nbsp;'.$opt[0].'</label>'.
     '</div>'.
     '<div class="col-md-6">'.
-        '<label for="q1_ans2"><input type="radio" name="radio_answer'.$count.'" id="q1_ans2" value='.$opt[1].'>&nbsp;&nbsp;'.$opt[1].'</label>'.
+        '<label for="q1_ans2"><input type="radio" name="radio_answer'.$count.'" id="q1_ans2" value="'.$opt[1].'">&nbsp;&nbsp;'.$opt[1].'</label>'.
     '</div>'.
 '</div>'.
 
@@ -49,10 +49,10 @@ class question
 
 '<div class="row">'.
     '<div class="col-md-6">'.
-        '<label for="q1_ans3"><input type="radio" name="radio_answer'.$count.'" id="q1_ans3" value='.$opt[2].'>&nbsp;&nbsp;'.$opt[2].'</label>'.
+        '<label for="q1_ans3"><input type="radio" name="radio_answer'.$count.'" id="q1_ans3" value="'.$opt[2].'">&nbsp;&nbsp;'.$opt[2].'</label>'.
     '</div>'.
     '<div class="col-md-6">'.
-        '<label for="q1_ans4"><input type="radio" name="radio_answer'.$count.'" id="q1_ans4" value='.$opt[3].'>&nbsp;&nbsp;'.$opt[3].'</label>'.
+        '<label for="q1_ans4"><input type="radio" name="radio_answer'.$count.'" id="q1_ans4" value="'.$opt[3].'">&nbsp;&nbsp;'.$opt[3].'</label>'.
     '</div>'.
 '</div>'.
 '</div>'.

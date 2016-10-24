@@ -22,7 +22,15 @@ if(isset($_POST['sub_login'])){
         $_SESSION['user']=$row['u_name'];
         $_SESSION["loggedin"]=1;
         $_SESSION["eid"]= $email;
-        echo "<script>window.open('lostORfound.php','_self')</script>";
+        $_SESSION['role']=$row['role'];
+        $role=$row['role'];
+        if($role=="normal") {
+            echo "<script>window.open('lostORfound.php','_self')</script>";
+        }
+        else
+        {
+            echo "<script>window.open('user_panel.php','_self')</script>";
+        }
     }
     else {
         echo "<script>alert('Email or password is not correct, try again!')</script>";

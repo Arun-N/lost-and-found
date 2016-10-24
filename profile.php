@@ -56,7 +56,7 @@ require_once ('generateprofile.php');
     <hr>
     <div class="panel panel-trans">
         <div class="panel-body" id="search_contents">
-            <h4>Search Result Example</h4>
+            <h4>Objects you have uploaded</h4>
             <!-- RESULT PAGE TEMPLATE STARTS HERE -->
             <div class="row">
                 <?php

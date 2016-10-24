@@ -21,7 +21,7 @@ $date=date_create('',timezone_open("Asia/Kolkata"));
 $d=serialize($date);
 
 
-$q = mysqli_query($conn, "INSERT INTO `object` VALUES ('','$obj_name','$tags','$uid','$img_url','$d','true')");
+$q = mysqli_query($conn, "INSERT INTO `object` VALUES ('','$obj_name','$tags','$uid','$img_url','$d','false')");
 if ($q) {
 
 
@@ -55,6 +55,8 @@ if ($q) {
 
         $quer= "INSERT INTO `question` VALUES ('','$obj_id','$que','$answer','$options')";
         $quer1=mysqli_query($conn,$quer);
+
+        unset($_SESSION['Qcount']);
         if ($quer1){}
         else{
             echo '<script language="javascript">';

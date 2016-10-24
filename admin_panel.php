@@ -1,3 +1,21 @@
+<?php
+session_start();
+include ('config.php');
+
+$u=mysqli_query($conn,"SELECT * FROM `user` WHERE `role`='normal'");
+$users=mysqli_num_rows($u);
+$_SESSION['userno']=$users;
+
+$unob=mysqli_query($conn,"SELECT * FROM `object` WHERE `status`='false'");
+$obj=mysqli_num_rows($unob);
+$_SESSION['unob']=$obj;
+
+
+?>
+
+
+
+
 <html>
     <head>
         <title>Admin Page</title>
@@ -59,7 +77,7 @@
                             <li><a href="object_panel.php">Lost Objects</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
+                            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,14 +98,14 @@
                                 <h2 class="text-center" style="color: white">
                                     Total Number Of Users Registered
                                     <br><br>
-                                    ---- Number Of Users ----
+                                    ---- <?php echo $_SESSION['userno'];?> ----
                                 </h2>
                             </div>
                             <div class="col-md-6">
                                 <h2 class="text-center" style="color: white">
                                     Total Number Of Objects Still Unclaimed
                                     <br><br>
-                                    ---- Number Of Objects ----
+                                    ---- <?php echo $_SESSION['unob'];?> ----
                                 </h2>
                             </div>
                         </div>

@@ -45,9 +45,10 @@ class single
         $_SESSION['d']=$d;
         $_SESSION['d1']=$d1;
         $dif=date_diff($d1,$d);
-
-        $_SESSION['difdate']=$dif;
+        $datedif=$dif->format("%a");
+        $_SESSION['dif']=$datedif;
         $_SESSION['ostatus']=$status;
+        $_SESSION['currentO']=$this->id;
     }
 
     /**
