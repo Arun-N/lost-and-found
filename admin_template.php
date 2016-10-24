@@ -60,25 +60,6 @@
                 </div>
                 <!-- navigation bar end -->
 
-                <div class="jumbotron jumbo-trans">
-                    <h1 class="text-center">
-                        LIST OF CURRENTLY REGISTERED USERS
-                    </h1>
-                </div>
-
-                <!-- POPULATE THIS LIS WITH USERS -->
-
-                <div class="panel panel-trans">
-                    <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="#">User 1</a></li>
-                            <li class="list-group-item"><a href="#">User 2</a></li>
-                            <li class="list-group-item"><a href="#">User 3</a></li>
-                            <li class="list-group-item"><a href="#">User 4</a></li>
-                            <li class="list-group-item"><a href="#">User 5</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </body>
