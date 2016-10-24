@@ -17,13 +17,11 @@ $tags=serialize($tag);
 
 $img_url=$_SESSION['nname'];
 
-$q1=$_POST['q1'].'?';
-$a1=strtolower($_POST['a1']);
-$q2=$_POST['q2'].'?';
-$a2=strtolower($_POST['a2']);
+$date=date_create('',timezone_open("Asia/Kolkata"));
+$d=serialize($date);
 
 
-$q = mysqli_query($conn, "INSERT INTO `object` VALUES ('','$obj_name','$tags','$uid','$img_url')");
+$q = mysqli_query($conn, "INSERT INTO `object` VALUES ('','$obj_name','$tags','$uid','$img_url','$d','true')");
 if ($q) {
 
 
@@ -35,14 +33,36 @@ if ($q) {
     else{
         echo '<script language="javascript">';
         echo 'alert("something went wrong while retrieving");';
-        echo "window.open('upload.php','_self');";
+        //echo "window.open('upload.php','_self');";
         echo '</script>';
     }
     unset($_SESSION['nname']);
     unset($_SESSION['oname']);
 
-    $q1 = mysqli_query($conn, "INSERT INTO `question` VALUES ('','$obj_id','$q1','$a1')");
-    $q2 = mysqli_query($conn, "INSERT INTO `question` VALUES ('','$obj_id','$q2','$a2')");
+    //adding Questions
+    $count=$_SESSION['Qcount'];
+    for($i=1;$i<=$count;$i++)
+    {
+        $que=$_POST['ques_'.$i].'?';
+        $opt=array();
+        for($j=1;$j<=4;$j++)
+        {
+            $opt[]= $_POST['opt'.$i.$j];
+        }
+        $options=serialize($opt);
+        $a=$_POST['correct_ans_q'.$i];
+        $answer=$_POST['opt'.$i.$a];
+
+        $quer= "INSERT INTO `question` VALUES ('','$obj_id','$que','$answer','$options')";
+        $quer1=mysqli_query($conn,$quer);
+        if ($quer1){}
+        else{
+            echo '<script language="javascript">';
+            echo 'alert("something wrong while adding questions");';
+            echo "window.open('upload.php','_self');";
+            echo '</script>';
+        }
+    }
     echo '<script language="javascript">';
     echo 'alert("object Successfully Added");';
     echo "window.open('lostORfound.php','_self');";
@@ -51,9 +71,9 @@ if ($q) {
 
 }else{
     echo '<script language="javascript">';
-    echo 'alert("Something Went Wrong!")';
+    echo 'alert("Something Went Wrong while adding object!")';
     echo '</script>';
-    header('Location:upload.php');
+    //header('Location:upload.php');
 }
 
 

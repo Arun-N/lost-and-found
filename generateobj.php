@@ -11,6 +11,7 @@ class obj
 
     function generate($res)
     {
+
         $conn= mysqli_connect('localhost','root','','lostfound');
         $q=mysqli_query($conn,"SELECT * FROM `object`");
         if($q)

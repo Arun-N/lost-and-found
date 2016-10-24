@@ -13,10 +13,7 @@ class single
     public $obj_name='';
     public $img_url='';
     public $id='';
-    public $q1='';
-    public $q2='';
-    public $a1='';
-    public $a2='';
+
 
     function __construct()
     {
@@ -40,23 +37,17 @@ class single
 
             $this->obj_name = $row['obj_name'];
             $_SESSION['oid']=$row['uid'];
+
+            $d=unserialize($row['date']);
+            $status=$row['status'];
         }
-        $qA=array();
-        $qS=array();
-        $qq=mysqli_query($conn,"SELECT * FROM `question` WHERE `obj_id`='$this->id'");
+        $d1=date_create('',timezone_open("Asia/Kolkata"));
+        $_SESSION['d']=$d;
+        $_SESSION['d1']=$d1;
+        $dif=date_diff($d1,$d);
 
-        while ($r=mysqli_fetch_array($qq))
-        {
-            $qA[]=$r['question'];
-            $qS[]=$r['answer'];
-
-        }
-
-        $this->q1=$qA[0];
-        $this->q2=$qA[1];
-        $this->a1=$qS[0];
-        $this->a2=$qS[1];
-
+        $_SESSION['difdate']=$dif;
+        $_SESSION['ostatus']=$status;
     }
 
     /**
@@ -75,21 +66,7 @@ class single
         return $this->obj_name;
     }
 
-    /**
-     * @return null
-     */
-    public function getQ1()
-    {
-        return $this->q1;
-    }
 
-    /**
-     * @return null
-     */
-    public function getQ2()
-    {
-        return $this->q2;
-    }
 
     /**
      * @return null
@@ -102,17 +79,6 @@ class single
     /**
      * @return null
      */
-    public function getA1()
-    {
-        return $this->a1;
-    }
 
-    /**
-     * @return null
-     */
-    public function getA2()
-    {
-        return $this->a2;
-    }
 }
 ?>
