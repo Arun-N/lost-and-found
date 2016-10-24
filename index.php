@@ -62,23 +62,20 @@ if(isset($_POST['sub_login'])){
                 font-size: 20px;
             }
 
-            .panel-trans .panel-heading{
-                background: rgba(122, 130, 136, 0.4)!important;
-            }
 
             .panel-trans .panel-body{
                 background: rgba(46, 51, 56, 0.4)!important;
             }
 
             label{
-                color: #46b8da;
+                color: black;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="jumbotron jumbo-trans text-center">
-                <h1 style="color: dodgerblue">Some Fancy Title And Logo</h1>
+                <h1 style="color: dodgerblue">THE LOST AND FOUND</h1>
             </div>
             <div class="row">
                 <div class="col-md-4"></div>
