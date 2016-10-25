@@ -1,11 +1,14 @@
 <?php
+
 include 'config.php';
 session_start();
 
 
-    if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
-        echo "<script>window.open('index.php','_self')</script>";
-        exit;
+    if (isset($_SESSION['role'])) {}
+    else{
+
+    echo "<script>window.open('index.php','_self')</script>";
+    exit;
 }
 
 ?>

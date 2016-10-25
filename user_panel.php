@@ -1,5 +1,17 @@
 <?php
 include ('config.php');
+session_start();
+if (isset($_SESSION['role'])) {
+    if($_SESSION['role']=='normal')
+    {
+        echo "<script>window.open('lostORfound.php','_self')</script>";
+    }
+}
+else
+{
+    echo "<script>window.open('index.php','_self')</script>";
+}
+exit;
 
 ?>
 

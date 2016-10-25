@@ -1,6 +1,21 @@
 <?php
 session_start();
+
+if (isset($_SESSION['role'])) {
+    if($_SESSION['role']=='normal')
+    {
+        echo "<script>window.open('lostORfound.php','_self')</script>";
+    }
+}
+else
+{
+    echo "<script>window.open('index.php','_self')</script>";
+}
+exit;
+
+
 include ('config.php');
+include ('generateprofile.php');
 $id=$_GET['id'];
 $q=mysqli_query($conn,"SELECT * from `user` WHERE `uid`='$id'");
 
@@ -76,7 +91,7 @@ while($row=mysqli_fetch_assoc($q))
             </div>
         </div>
         <!-- navigation bar end -->
-
+    </div>
         <div class="row">
             <div class="col-md-12">
                 <center><h1>USER INFORMATION</h1></center>
@@ -94,23 +109,17 @@ while($row=mysqli_fetch_assoc($q))
         </div>
 
         <div class="jumbotron jumbo-trans">
-            <h1 class="text-center">Uploaded By<?php echo ' '.$_SESSION['name2'];?></h1>
+            <h2 class="text-center">Uploaded By<?php echo ' '.$_SESSION['name2'];?></h2>
         </div>
         <hr>
         <div class="panel panel-trans">
             <div class="panel-body" id="search_contents">
-                <h4>Objects you have uploaded</h4>
                 <!-- RESULT PAGE TEMPLATE STARTS HERE -->
                 <div class="row">
                     <?php
 
-                    if(isset($_SESSION['uid']))
-                    {
                         $o=new obj();
-                        $o->generate($_SESSION['uid']);
-
-                    }
-
+                        $o->generate($id);
 
 
                     ?>
@@ -125,7 +134,7 @@ while($row=mysqli_fetch_assoc($q))
 
 
 
-    </div>
+
 </div>
 </body>
 </html>

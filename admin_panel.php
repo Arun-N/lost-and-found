@@ -2,6 +2,18 @@
 session_start();
 include ('config.php');
 
+if (isset($_SESSION['role'])) {
+    if($_SESSION['role']=='normal')
+    {
+        echo "<script>window.open('lostORfound.php','_self')</script>";
+    }
+}
+else
+{
+    echo "<script>window.open('index.php','_self')</script>";
+}
+exit;
+
 $u=mysqli_query($conn,"SELECT * FROM `user` WHERE `role`='normal'");
 $users=mysqli_num_rows($u);
 $_SESSION['userno']=$users;

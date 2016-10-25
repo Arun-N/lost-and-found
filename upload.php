@@ -1,6 +1,12 @@
 <?php
 include ('generateQupload.php');
 session_start();
+if (isset($_SESSION['role'])) {}
+else{
+
+    echo "<script>window.open('index.php','_self')</script>";
+    exit;
+}
 if(isset($_POST['no_of_questions']))
 {
     $_SESSION['Qcount']=$_POST['no_of_questions'];
