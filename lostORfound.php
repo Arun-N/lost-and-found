@@ -8,7 +8,7 @@ session_start();
     else{
 
     echo "<script>window.open('index.php','_self')</script>";
-    exit;
+
 }
 
 ?>

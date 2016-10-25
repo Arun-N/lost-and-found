@@ -20,7 +20,7 @@ class obj
                     echo '<div class="col-md-4">'.
                         '<div class="input-group">'.
                         '<span class="input-group-addon"><img href="object.php?id='.$row['obj_id'].'" src="objimg/'.$row['img_url'].'" height="150px" width="150px"></span>'.
-                        '<a href="object.php?id='.$row['obj_id'].'">&nbsp;&nbsp;'.$row['obj_name'].'</a>'.
+                        '<h3>&nbsp;&nbsp;'.$row['obj_name'].'</h3>'.
                         '</div>'.
                         '</div>';
 

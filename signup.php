@@ -20,7 +20,7 @@ session_start();
             echo '</script>';
 
         }else{
-            $qq = mysqli_query($conn, "INSERT INTO `user` VALUES ('','$user','$name','$passMD5','$mob')");
+            $qq = mysqli_query($conn, "INSERT INTO `user` VALUES ('','$user','$name','$passMD5','$mob','normal')");
             if ($qq) {
                 echo '<script language="javascript">';
                 echo 'alert("Successfully Registered! now login using id and password");';

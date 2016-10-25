@@ -29,7 +29,7 @@ if(isset($_POST['sub_login'])){
         }
         else
         {
-            echo "<script>window.open('user_panel.php','_self')</script>";
+            echo "<script>window.open('admin_panel.php','_self')</script>";
         }
     }
     else {

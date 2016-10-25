@@ -12,7 +12,6 @@ else
 {
     echo "<script>window.open('index.php','_self')</script>";
 }
-exit;
 
 $u=mysqli_query($conn,"SELECT * FROM `user` WHERE `role`='normal'");
 $users=mysqli_num_rows($u);

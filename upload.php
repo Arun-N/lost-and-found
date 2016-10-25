@@ -98,30 +98,14 @@ if(isset($_POST['no_of_questions']))
     <body>
         <div class="container-fluid">
             <nobr>
+                <a class="btn btn-primary" style="width: 40px; height: 30px" href="lostORfound.php"><span class="glyphicon glyphicon-home"></span></a>
                 <a class="btn btn-primary" id="profile" name="profile" style="width: 90px;float: right;margin-right:50px; margin-top: 10px" href="profile.php">Profile</a>
                 <a class="btn btn-primary" style="width: 90px;float: right;margin-right:10px; margin-top: 10px" id="logout" name="logout" href="logout.php">Log out</a>
             </nobr>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center text-capitalize">Describe the object found</h1>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-trans">
-                        <div class="panel-heading">
-                            <h3 class="text-center" style="color: red">****** IMPORTANT INSTRUCTIONS! READ BEFORE FILLING OUT! ******</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul>
-                                <li>Instruction 1</li>
-                                <li>Instruction 2</li>
-                                <li>Instruction 3</li>
-                                <li>Instruction 4</li>
-                                <li>Instruction 5</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <form method="post" action="uploadimg.php" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-4">

@@ -51,6 +51,7 @@ require_once ('generateobj.php');
     </head>
     <body>
         <div class="container">
+            <a class="btn btn-primary" style="width: 40px; height: 30px" href="lostORfound.php"><span class="glyphicon glyphicon-home"></span></a>
             <a class="btn btn-primary" id="logout" style="margin-left: 90%; margin-top:15px;" href="logout.php">Logout</a>
             <div class="jumbotron jumbo-trans">
                 <h1 class="text-center">Search For Your Missing Item</h1>

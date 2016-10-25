@@ -5,7 +5,7 @@ if (isset($_SESSION['role'])) {}
 else{
 
     echo "<script>window.open('index.php','_self')</script>";
-    exit;
+
 }
     require_once ('singleobj.php');
     require_once ('generateQsearch.php');

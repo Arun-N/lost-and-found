@@ -11,7 +11,7 @@ else
 {
     echo "<script>window.open('index.php','_self')</script>";
 }
-exit;
+
 ?>
 
 
@@ -71,7 +71,7 @@ exit;
                     <li><a href="object_panel.php">Lost Objects</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-out">&nbsp;Logout</span></a></li>
                 </ul>
             </div>
         </div>
@@ -98,7 +98,7 @@ exit;
                         echo '<div class="col-md-4">'.
                             '<div class="input-group">'.
                             '<span class="input-group-addon"><img href="object.php?id='.$row['obj_id'].'" src="objimg/'.$row['img_url'].'" height="150px" width="150px"></span>'.
-                            '<a href="object.php?id='.$row['obj_id'].'">&nbsp;&nbsp;'.$row['obj_name'].'</a>'.
+                            '<h3>&nbsp;&nbsp;'.$row['obj_name'].'</h3>'.
                             '</div>'.
                             '</div>';
 
